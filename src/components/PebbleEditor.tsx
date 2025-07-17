@@ -20,7 +20,8 @@ export default function PebbleEditor({ value, theme, onChange }: {
     loadMonacoLoader().then((require) => {
       require(['vs/editor/editor.main'], () => {
         const monaco = window.monaco;
-        editor = monaco.editor.create(containerRef.current!, {
+        if (!containerRef.current) return; // Ensure containerRef.current is valid
+        editor = monaco.editor.create(containerRef.current, {
           value,
           language: 'pebble',
           theme: theme || 'vs-dark',
