@@ -5,7 +5,7 @@ export function loadMonacoLoader(): Promise<typeof window.require> {
       const script = document.createElement('script');
       script.src = '/vs/loader.js'; // ← served directly from node_modules
       script.onload = () => {
-        if (!window.require) return reject('RequireJS not available');
+        if (!window.require) return reject(new Error('RequireJS not available'));
         window.require.config({ paths: { vs: '/vs' } });
         resolve(window.require);
       };
