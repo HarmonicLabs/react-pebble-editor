@@ -1,12 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import * as monaco from 'monaco-editor';
 import { loadMonacoLoader } from '../utils/monaco-loader';
 
-declare global {
-    interface Window {
-      monaco: typeof monaco;
-    }
-  }
 
 export default function PebbleEditor({ value, theme, onChange }: {
   value: string;

@@ -11,8 +11,10 @@
       "outDir": "dist",
       "declaration": true,
       "declarationDir": "dist",
-      "sourceMap": true
+      "emitDeclarationOnly": true,
+      "sourceMap": true,
+      "allowSyntheticDefaultImports": true
     },
-    "include": ["src"],
+    "include": ["src", "src/types"],
     "exclude": ["node_modules", "dist"]
   }
