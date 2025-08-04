@@ -4,9 +4,9 @@
     "description": "React wrap component for monaco pebble editor",
     "scripts": {
         "dev": "vite",
-        "build": "tsc --emitDeclarationOnly && vite build",
-        "preview": "vite preview",
-        "start": "vite preview"
+        "types": "tsc --emitDeclarationOnly --project tsconfig.json",
+        "build": "npm run types && vite build",
+        "preview": "vite preview"
     },
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -19,23 +19,17 @@
     },
     "devDependencies": {
         "@harmoniclabs/plu-ts": "^0.9.0",
-        "@types/node": "^17.0.45",
-        "@types/react": "^19.1.9",
-        "@types/react-dom": "^19.1.7",
-        "@types/requirejs": "^2.1.37",
-        "@vitejs/plugin-react": "^4.6.0",
-        "eslint": "^9.31.0",
-        "eslint-config-prettier": "^10.1.5",
-        "eslint-plugin-react": "^7.37.5",
-        "prettier": "^3.6.2",
-        "react": "^19.1.0",
-        "react-dom": "^19.1.0",
-        "ts-node": "^10.9.2",
-        "tsup": "^8.5.0",
-        "typescript": "^5.8.3",
-        "vite": "^7.0.5"
+        "@types/node": "18.0.0",
+        "@types/react": "^18.0.0",
+        "@types/react-dom": "^18.0.0",
+        "@vitejs/plugin-react": "^4.7.0",
+        "fs-extra": "^11.3.0",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "typescript": "5.4.5",
+        "vite": "^5.0.0"
     },
     "dependencies": {
-        "@harmoniclabs/monaco-editor": "file:../monaco-editor/harmoniclabs-monaco-editor-0.52.0.tgz"
+        "@harmoniclabs/monaco-editor": "file:../monaco-editor/harmoniclabs-monaco-editor-0.52.1.tgz"
     }
 }
