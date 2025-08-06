@@ -11,7 +11,7 @@ function copyVsPlugin(): Plugin {
     name: 'copy-monaco-vs',
     apply: 'build', // only during build
     async closeBundle() {
-      const src = path.resolve(__dirname, 'node_modules/monaco-editor/out/dev/vs');
+      const src = path.resolve(__dirname, 'node_modules/@harmoniclabs/monaco-editor/out/monaco-editor/dev/vs');
       const dest = path.resolve(__dirname, 'dist/vs');
 
       // Clean existing dist/vs first
@@ -22,9 +22,9 @@ function copyVsPlugin(): Plugin {
       // Copy afresh
       if (fs.existsSync(src)) {
         await fse.copy(src, dest);
-        console.log('✅ Copied monaco-editor/out/dev/vs to dist/vs');
+        console.log('✅ Copied @harmoniclabs/monaco-editor/out/monaco-editor/dev/vs to dist/vs');
       } else {
-        console.warn('⚠️ Source "monaco-editor/out/dev/vs" not found!');
+        console.warn('⚠️ Source "@harmoniclabs/monaco-editor/out/monaco-editor/dev/vs" not found!');
       }
     }
   };

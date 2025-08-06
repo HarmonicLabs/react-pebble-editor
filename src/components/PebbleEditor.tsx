@@ -32,5 +32,5 @@ export default function PebbleEditor({ value, theme, onChange }: {
     };
   }, []);
 
-  return <div ref={containerRef} style={{ height: 400, width: '100%' }} />;
+  return <div ref={containerRef} style={{ height: '100%', width: '100%' }} />;
 }
