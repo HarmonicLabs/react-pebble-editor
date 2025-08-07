@@ -30,7 +30,7 @@ export default function PebbleEditor({ value, theme, onChange }: {
     return () => {
       editor?.dispose();
     };
-  }, []);
+  }, [value]);
 
   return <div ref={containerRef} style={{ height: '100%', width: '100%' }} />;
 }
