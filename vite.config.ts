@@ -40,7 +40,7 @@ export default defineConfig({
   server: {
     fs: {
       allow: [
-        'node_modules/monaco-editor/dev',
+        'node_modules/monaco-editor/out/monaco-editor/dev',
         'dist'
       ]
     }
