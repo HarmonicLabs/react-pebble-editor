@@ -1,6 +1,6 @@
 {
     "name": "react-pebble-editor",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "React wrap component for monaco pebble editor",
     "scripts": {
         "dev": "vite",
@@ -25,10 +25,10 @@
     ],
     "devDependencies": {
         "@harmoniclabs/pebble": "^0.3.0",
-        "@types/node": "18.0.0",
+        "@types/node": "^22.12.0",
         "@types/react": "^18.0.0",
         "@types/react-dom": "^18.0.0",
-        "@vitejs/plugin-react": "^4.7.0",
+        "@vitejs/plugin-react": "^6.0.0",
         "fs-extra": "^11.3.0",
         "react": "^18.0.0",
         "react-dom": "^18.0.0",
@@ -36,6 +36,6 @@
         "vite": "^8.0.14"
     },
     "dependencies": {
-        "@harmoniclabs/monaco-editor": "^0.1.2"
+        "@harmoniclabs/monaco-editor": "^0.3.0"
     }
 }

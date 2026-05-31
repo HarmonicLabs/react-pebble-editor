@@ -11,11 +11,24 @@ export default defineConfig({
       fileName: (format) => `react-pebble-editor.${format}.js`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      // `react/jsx-runtime` + dev variant must be external too. Vite 7+
+      // bundles the JSX automatic-runtime polyfill into the output via
+      // CJS `require("react/jsx-runtime")` inside an inner factory; if
+      // not externalised, that CJS require leaks into the published ESM
+      // and breaks server-side renderers (Docusaurus SSG, Next.js, etc.)
+      // with "Cannot find module 'react'".
+      external: [
+        'react',
+        'react-dom',
+        'react/jsx-runtime',
+        'react/jsx-dev-runtime',
+      ],
       output: {
         globals: {
-          react: 'React',
+          'react': 'React',
           'react-dom': 'ReactDOM',
+          'react/jsx-runtime': 'jsxRuntime',
+          'react/jsx-dev-runtime': 'jsxDevRuntime',
         }
       }
     }
