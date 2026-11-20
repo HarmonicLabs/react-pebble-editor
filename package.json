@@ -1,12 +1,13 @@
 {
     "name": "react-pebble-editor",
-    "version": "0.3.2",
+    "version": "0.6.0",
     "description": "React wrap component for monaco pebble editor",
     "scripts": {
         "dev": "vite",
         "types": "tsc --emitDeclarationOnly --project tsconfig.json",
         "build": "vite build && npm run types",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "test": "node --import tsx --test test/*.test.ts"
     },
     "main": "dist/react-pebble-editor.umd.js",
     "module": "dist/react-pebble-editor.es.js",
@@ -24,7 +25,7 @@
         "README.md"
     ],
     "devDependencies": {
-        "@harmoniclabs/pebble": "^0.3.1",
+        "@harmoniclabs/pebble": "^0.6.0",
         "@types/node": "^22.12.0",
         "@types/react": "^18.0.0",
         "@types/react-dom": "^18.0.0",
@@ -32,10 +33,20 @@
         "fs-extra": "^11.3.0",
         "react": "^18.0.0",
         "react-dom": "^18.0.0",
+        "tsx": "^4.20.3",
         "typescript": "5.4.5",
         "vite": "^8.0.14"
     },
     "dependencies": {
-        "@harmoniclabs/monaco-editor": "^0.3.0"
+        "@harmoniclabs/monaco-editor": "^0.6.0"
+    },
+    "peerDependencies": {
+        "@harmoniclabs/pebble": "^0.6.0",
+        "react": ">=18"
+    },
+    "peerDependenciesMeta": {
+        "@harmoniclabs/pebble": {
+            "optional": true
+        }
     }
 }

@@ -22,6 +22,10 @@ export default defineConfig({
         'react-dom',
         'react/jsx-runtime',
         'react/jsx-dev-runtime',
+        // loaded with import() when the language features are first used; a peer
+        // dependency, so that the page and the editor share one compiler
+        '@harmoniclabs/pebble',
+        /^@harmoniclabs\/pebble\//,
       ],
       output: {
         globals: {
@@ -29,6 +33,7 @@ export default defineConfig({
           'react-dom': 'ReactDOM',
           'react/jsx-runtime': 'jsxRuntime',
           'react/jsx-dev-runtime': 'jsxDevRuntime',
+          '@harmoniclabs/pebble': 'HarmonicLabsPebble',
         }
       }
     }
